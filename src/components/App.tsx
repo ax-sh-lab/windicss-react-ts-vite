@@ -6,7 +6,9 @@ import Layout from "./Layout/Layout";
 function App() {
   return (
     <Layout>
-      <div className={"App bg-green-300"}>Hello</div>
+      <div className={"App bg-green-300"}>App
+
+      </div>
     </Layout>
   );
 }
