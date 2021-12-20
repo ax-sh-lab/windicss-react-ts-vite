@@ -4,12 +4,28 @@ export type LayoutProps = {
   children: React.ReactNode;
 };
 
+interface ListProps {
+  readonly children: NonNullable<React.ReactNode>;
+}
+
+const List = ({ children, ...props }: ListProps) => {
+  return (
+    <ul {...props}>
+      {children.map((child: React.ReactNode) => (
+        <li>{child}</li>
+      ))}
+    </ul>
+  );
+};
+
 const Nav = () => {
   return (
     <nav>
-      <ul>
-        <li>Home</li>
-      </ul>
+      <List className={"nav"}>
+        <a>HOME</a>
+        <a>ABOUT</a>
+        <a>CONTACT</a>
+      </List>
     </nav>
   );
 };
