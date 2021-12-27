@@ -21,11 +21,17 @@ const List = ({ children, ...props }: ListProps) => {
 const Nav = () => {
   return (
     <nav>
-      <List className={"nav"}>
-        <a>HOME</a>
-        <a>ABOUT</a>
-        <a>CONTACT</a>
-      </List>
+      <ul>
+        <List
+          className={
+            "nav flex justify-end space-x-4 p-8 bg-black text-white children:cursor-pointer children:group-hover:bg-blue-300"
+          }
+        >
+          <a>HOME</a>
+          <a>ABOUT</a>
+          <a>CONTACT</a>
+        </List>
+      </ul>
     </nav>
   );
 };
