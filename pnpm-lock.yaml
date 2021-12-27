@@ -4,6 +4,7 @@ specifiers:
   '@types/react': ^17.0.0
   '@types/react-dom': ^17.0.0
   '@vitejs/plugin-react': ^1.0.0
+  classnames: ^2.3.1
   husky: ^7.0.4
   prettier: ^2.4.1
   pretty-quick: ^3.1.2
@@ -17,6 +18,7 @@ specifiers:
   windicss: ^3.2.1
 
 dependencies:
+  classnames: 2.3.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-router-dom: 6.2.1_react-dom@17.0.2+react@17.0.2
@@ -540,6 +542,10 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.2
+    dev: false
+
+  /classnames/2.3.1:
+    resolution: {integrity: sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==}
     dev: false
 
   /color-convert/1.9.3:
