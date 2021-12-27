@@ -1,7 +1,7 @@
 import "./App.scss";
 import Layout from "./Layout/Layout";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Home/Home";
+import Home from "./pages/Home/Home";
 
 // https://windicss.org/
 // https://tailwindcss.com/
