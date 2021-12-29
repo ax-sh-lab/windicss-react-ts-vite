@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React, { Fragment } from "react";
 import faker from "faker";
+import { IoIosInformationCircle } from "react-icons/all";
 
 const ToggleButton = ({ setHide }: { setHide: (state: boolean) => void }) => {
   const [show, hide] = React.useState(false);
@@ -21,21 +22,33 @@ const ToggleButton = ({ setHide }: { setHide: (state: boolean) => void }) => {
 
 function ProfileCard({ id, image_url, label }: any) {
   return (
-    <label className={"profile inline-block h-30 w-50 m-2"}>
-      <input className={"hidden "} type={"radio"} name={"profile"} value={id} />
-      <div
-        className={
-          "card cursor-pointer relative h-full w-full rounded-md bg-black rounded-md border-transparent overflow-hidden"
-        }
-      >
-        <img
-          alt={"card"}
-          className={"absolute h-full w-full object-fill rounded-md"}
-          src={image_url}
+    <div className={"profile relative inline-block h-30 w-50 m-2"}>
+      <label>
+        <input
+          className={"hidden "}
+          type={"radio"}
+          name={"profile"}
+          value={id}
         />
-        <h6 className={"absolute bottom-4 left-4 right-8 font-bold truncate"}>{label}</h6>
+        <div
+          className={
+            "card cursor-pointer relative h-full w-full rounded-md bg-black rounded-md border-transparent overflow-hidden"
+          }
+        >
+          <img
+            alt={"card"}
+            className={"absolute h-full w-full object-fill rounded-md"}
+            src={image_url}
+          />
+          <h6 className={"absolute bottom-4 left-4 right-8 font-bold truncate"}>
+            {label}
+          </h6>
+        </div>
+      </label>
+      <div className={"absolute p-2 bottom-0 right-0"}>
+        <IoIosInformationCircle size={24} />
       </div>
-    </label>
+    </div>
   );
 }
 
