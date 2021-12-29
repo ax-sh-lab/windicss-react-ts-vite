@@ -1,17 +1,13 @@
 import classNames from "classnames";
 import React from "react";
 
-const ToggleButton = ({
-  setHide,
-}: {
-  setHide: React.SetStateAction<boolean>;
-}) => {
+const ToggleButton = ({ setHide }: { setHide: (state: boolean) => void }) => {
   const [show, hide] = React.useState(false);
   React.useEffect(() => {
     setHide(show);
   }, [setHide, show]);
   return (
-    <div className="bg-white shadow grid place-content-center">
+    <div className="HideToggle bg-white shadow grid place-content-center">
       <span
         className="cursor-pointer transform -rotate-90"
         onClick={() => hide(!show)}
@@ -24,9 +20,9 @@ const ToggleButton = ({
 
 const ProductPage = () => {
   const [show, hide] = React.useState(true);
-  const uiClasses = classNames("bg-green-400 h-full w-1/3 transition-all", {
-    "transform translate-x-full": !show,
-  });
+  // const uiClasses = classNames("bg-green-400 h-full w-1/3 transition-all", {
+  //   "transform translate-x-full": !show,
+  // });
   return (
     <div className="ProductPage">
       <section className={"flex min-h-screen overflow-hidden"}>

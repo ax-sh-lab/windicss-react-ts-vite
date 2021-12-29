@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 function Hero() {
   let banner_image_url = "https://via.placeholder.com/1920x1080";
   return (
@@ -10,6 +12,7 @@ function Hero() {
 function Home() {
   return (
     <div className={"Home min-h-screen"}>
+        <Link to={"/product"}>Product</Link>
       <header>
         <Hero />
       </header>
