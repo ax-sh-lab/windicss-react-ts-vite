@@ -4,11 +4,11 @@ export type LayoutProps = {
   children: React.ReactNode;
 };
 
-interface ListProps {
-  readonly children: NonNullable<React.ReactNode>;
+interface ListProps extends React.ComponentProps<any> {
+
 }
 
-const List = ({ children, ...props }: ListProps) => {
+export const List = ({ children, ...props }: ListProps) => {
   return (
     <ul {...props}>
       {children.map((child: React.ReactNode) => (
