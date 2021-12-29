@@ -20,6 +20,22 @@ const ToggleButton = ({ setHide }: { setHide: (state: boolean) => void }) => {
   );
 };
 
+function ProfileInfo() {
+  const [hovered, hover] = React.useState(false);
+  return (
+    <>
+      <IoIosInformationCircle
+        cursor={"pointer"}
+        onMouseOver={() => hover(true)}
+        onMouseOut={() => hover(false)}
+        size={24}
+        color={hovered ? "#f00" : "fff"}
+        onClick={() => console.log("666")}
+      />
+    </>
+  );
+}
+
 function ProfileCard({ id, image_url, label }: any) {
   return (
     <div className={"profile relative inline-block h-30 w-50 m-2"}>
@@ -46,7 +62,7 @@ function ProfileCard({ id, image_url, label }: any) {
         </div>
       </label>
       <div className={"absolute p-2 bottom-0 right-0"}>
-        <IoIosInformationCircle size={24} />
+        <ProfileInfo />
       </div>
     </div>
   );
