@@ -1,10 +1,10 @@
 .App {
   @apply h-screen;
 }
-.profile{
-  input{
-    &:checked ~ .card{
-      @apply bg-white border-white  border-4
+.profile {
+  input {
+    &:checked ~ .card {
+      @apply bg-white border-white  border-4;
     }
   }
 }

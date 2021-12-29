@@ -61,20 +61,27 @@ function getProduct() {
   };
 }
 
-function Profiles({ children }) {
-  function handleChange({ target }: any) {
-    const profileID = target.value;
-    const product = getProduct();
-
-    console.log("change", profileID, product);
-  }
+function Profiles({ profileItems, seletedProfile }) {
+  const handleChange = React.useCallback(
+    ({ target }: any) => {
+      const profileID = target.value;
+      seletedProfile(profileID);
+    },
+    [seletedProfile]
+  );
 
   return (
     <form
       className={"profiles relative whitespace-nowrap overflow-auto p-4"}
       onChange={handleChange}
     >
-      {children}
+      {profileItems.map((i) => {
+        return (
+          <Fragment key={i.id}>
+            <ProfileCard {...i} />
+          </Fragment>
+        );
+      })}
     </form>
   );
 }
@@ -101,6 +108,9 @@ const ProductPage = () => {
   // const uiClasses = classNames("bg-green-400 h-full w-1/3 transition-all", {
   //   "transform translate-x-full": !show,
   // });
+  const handleSelectedProfile = (i) => {
+    console.log(">>>>>", i);
+  };
   return (
     <div className="ProductPage">
       <section className={"flex min-h-screen overflow-hidden  transition-all "}>
@@ -117,15 +127,10 @@ const ProductPage = () => {
         >
           <div className={"p-8"}>
             <Description />
-            <Profiles>
-              {profileItems.map((i) => {
-                return (
-                  <Fragment key={i.id}>
-                    <ProfileCard {...i} />
-                  </Fragment>
-                );
-              })}
-            </Profiles>
+            <Profiles
+              profileItems={profileItems}
+              seletedProfile={handleSelectedProfile}
+            />
           </div>
         </aside>
       </section>
