@@ -1,20 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import List from "../../common/List";
 
 export type LayoutProps = {
   children: React.ReactNode;
-};
-
-interface ListProps extends React.ComponentProps<any> {}
-
-export const List = ({ children, ...props }: ListProps) => {
-  return (
-    <ul {...props}>
-      {children.map((child: React.ReactNode, index: number) => (
-        <li key={index}>{child}</li>
-      ))}
-    </ul>
-  );
 };
 
 const Nav = () => {
