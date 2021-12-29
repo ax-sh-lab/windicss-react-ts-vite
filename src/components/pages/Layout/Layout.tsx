@@ -1,12 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export type LayoutProps = {
   children: React.ReactNode;
 };
 
-interface ListProps extends React.ComponentProps<any> {
-
-}
+interface ListProps extends React.ComponentProps<any> {}
 
 export const List = ({ children, ...props }: ListProps) => {
   return (
@@ -27,9 +26,9 @@ const Nav = () => {
             "nav flex justify-end space-x-4 p-8 bg-black text-white children:cursor-pointer children:group-hover:bg-blue-300"
           }
         >
-          <a>HOME</a>
-          <a>ABOUT</a>
-          <a>CONTACT</a>
+          <Link to={"/"}>HOME</Link>
+          <Link to={"/about"}>ABOUT</Link>
+          <Link to={"/contact"}>CONTACT</Link>
         </List>
       </ul>
     </nav>
