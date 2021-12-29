@@ -10,8 +10,8 @@ interface ListProps extends React.ComponentProps<any> {}
 export const List = ({ children, ...props }: ListProps) => {
   return (
     <ul {...props}>
-      {children.map((child: React.ReactNode) => (
-        <li>{child}</li>
+      {children.map((child: React.ReactNode, index: number) => (
+        <li key={index}>{child}</li>
       ))}
     </ul>
   );
@@ -26,9 +26,15 @@ const Nav = () => {
             "nav flex justify-end space-x-4 p-8 bg-black text-white children:cursor-pointer children:group-hover:bg-blue-300"
           }
         >
-          <Link to={"/"}>HOME</Link>
-          <Link to={"/about"}>ABOUT</Link>
-          <Link to={"/contact"}>CONTACT</Link>
+          <Link key={"home"} to={"/"}>
+            HOME
+          </Link>
+          <Link key={"about"} to={"/about"}>
+            ABOUT
+          </Link>
+          <Link key={"contact"} to={"/contact"}>
+            CONTACT
+          </Link>
         </List>
       </ul>
     </nav>

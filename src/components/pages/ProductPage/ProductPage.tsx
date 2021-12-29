@@ -33,7 +33,7 @@ function ProfileCard({ id, image_url, label }: any) {
           className={"absolute h-full w-full object-fill rounded-md"}
           src={image_url}
         />
-        <h6>{label}</h6>
+        <h6 className={"absolute bottom-4 left-4"}>{label}</h6>
       </div>
     </label>
   );

@@ -4,7 +4,7 @@
 .profile {
   input {
     &:checked ~ .card {
-      @apply bg-white border-white  border-4;
+      @apply bg-white border-white border-4 text-black;
     }
   }
 }
