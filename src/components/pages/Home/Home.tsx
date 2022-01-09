@@ -16,7 +16,7 @@ interface Order {
 
 function OrderConfig() {
   const [orders, setOrders] = React.useState<Order[]>([
-    { id: 0, name: "" },
+    { id: 0, name: "" }, // initial order
     { id: 1, name: "" },
     { id: 2, name: "" },
     { id: 3, name: "" },
